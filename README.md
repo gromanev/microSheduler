@@ -18,3 +18,8 @@ var myClass = new MyClass();
 MicroMultipleSheduler.Start(myClass.Init, 1, 0.5);
 ...
 ```
+
+Я даже выложил пакет на NuGet, просто сделай:
+```
+Install-Package LynxTeam.microSheduler 
+```
