@@ -14,6 +14,9 @@ namespace MicroSheduler
         protected Timer Timer;
         protected double Interval = 0;
 
+        protected double SuccessInterval = 1;
+        protected double FailInterval = 0.5;
+
         /// <summary>
         /// Функция запуска диспетчера
         /// </summary>
@@ -23,12 +26,12 @@ namespace MicroSheduler
             {
                 try
                 {
-                    if (await sheduleMethod()) Interval = 1;
+                    if (await sheduleMethod()) Interval = SuccessInterval;
                     else throw new Exception();
                 }
                 catch (Exception e)
                 {
-                    Interval = 0.5;
+                    Interval = FailInterval;
                 }
                 finally
                 {
